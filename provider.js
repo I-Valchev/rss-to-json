@@ -3,7 +3,7 @@ const fs = require('fs');
 const github = require('@actions/github');
 
 module.exports.getRssUrls = function(filename) {
-    const file = fs.readFileSync(`./${filename}`, 'utf8');
+    const file = fs.readFileSync(`${filename}`, 'utf8');
     return YAML.parse(file)['feeds'];
 };
 
