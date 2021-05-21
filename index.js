@@ -4,8 +4,8 @@ const provider = require('./provider');
 
 (async () => {
 
-    const source = core.getInput('source') ? core.getInput('source') : 'feeds.yaml';
-    const target = core.getInput('target') ? core.getInput('target') : 'feeds.json';
+    const source = core.getInput('source');
+    const target = core.getInput('target');
 
     try {
         const urls = provider.getRssUrls(source);
