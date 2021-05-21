@@ -8,8 +8,8 @@ module.exports.getRssUrls = function(filename) {
 };
 
 module.exports.saveFeeds = function(feeds, filename) {
-    const existing = fs.readFileSync(filename, 'utf8');
-    const merged =JSON.parse(existing).concat(feeds);
+    const existing = fs.existsSync(filename) ? fs.readFileSync(filename, 'utf8') : '[]';
+    const merged = JSON.parse(existing).concat(feeds);
 
     fs.writeFileSync(filename, JSON.stringify(merged));
 };
