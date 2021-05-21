@@ -1,0 +1,19 @@
+{
+  "name": "rss-to-json",
+  "version": "1.0.0",
+  "description": "A GitHub Action which crawls RSS feeds and outputs a JSON file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.2.7",
+    "@actions/github": "^5.0.0",
+    "rss-parser": "^3.12.0",
+    "yaml": "^1.10.2"
+  }
+}

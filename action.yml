@@ -1,0 +1,14 @@
+name: 'RSS to JSON'
+description: 'A GitHub Action which crawls RSS feeds and outputs a JSON file.'
+inputs:
+  source:
+    description: The source directory and filename (incl. .yaml)
+    required: false
+    default: feeds.yaml
+  target:
+    description: The target directory and filename (incl. .json)
+    required: false
+    default: feeds.json
+runs:
+  using: 'node12'
+  main: 'index.js'
