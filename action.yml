@@ -12,6 +12,14 @@ inputs:
     description: The target directory and filename (incl. .json)
     required: false
     default: feeds.json
+  sortBy:
+    description: Sort the feed items by a field. Default is isoDate.
+    required: false
+    default: isoDate
+  sortOrder:
+    description: Specify the order direction. 'desc' or 'asc'. Default is desc.
+    required: false
+    default: desc
 runs:
   using: 'node12'
   main: 'index.js'

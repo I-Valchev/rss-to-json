@@ -4,8 +4,10 @@ const provider = require('./provider');
 
 (async () => {
 
-    const source = core.getInput('source');
-    const target = core.getInput('target');
+    const source = core.getInput('source') ? core.getInput('source') : 'feeds.yaml';
+    const target = core.getInput('target') ? core.getInput('target') : 'feeds.json';
+    const sortBy = core.getInput('sortBy') ? core.getInput('sortBy') : 'isoDate';
+    const sortOrder = core.getInput('sortOrder') ? core.getInput('sortOrder') : 'desc';
 
     try {
         const urls = provider.getRssUrls(source);
@@ -18,7 +20,7 @@ const provider = require('./provider');
             feeds = feeds.concat(feed.items);
         }
 
-        provider.saveFeeds(feeds, target);
+        provider.saveFeeds(feeds, target, sortBy, sortOrder);
 
     } catch (error) {
         core.setFailed(error.message);
