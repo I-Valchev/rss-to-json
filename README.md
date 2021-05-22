@@ -14,6 +14,8 @@ All options:
   with:
     source: data/feeds.yaml # An optional parameter to specify the source. Defaults to feeds.yaml
     target: output/feeds.json # An optional parameter to specify the target. Defaults to feeds.json
+    sortBy: An optional parameter to sort the feed items by a field. Default is isoDate.
+    sortOrder: An optional parameter to specify the order direction. 'desc' or 'asc'. Default is desc.
 ```
 
 ### `feeds.yaml` format
