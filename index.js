@@ -15,7 +15,7 @@ const provider = require('./provider');
             const feed = await (new rssParser()).parseURL(url);
 
             // todo: Add the date added?
-            feeds.push(feed.items);
+            feeds = feeds.concat(feed.items);
         }
 
         provider.saveFeeds(feeds, target);
