@@ -8,12 +8,12 @@ module.exports.getRssUrls = function(filename) {
 
 module.exports.saveFeeds = function(feeds, filename, sortBy, sortOrder) {
     const existing = fs.existsSync(filename) ? fs.readFileSync(filename, 'utf8') : '[]';
-    const result = JSON.parse(existing)
+    let result = JSON.parse(existing)
                     .concat(feeds)
-                    .filter((v,i,a)=>a.findIndex(t=>(t.id === v.id))===i);
+                    .filter((v,i,a)=>a.findIndex(t=>(t.id === v.id)) !==i);
 
     if (sortBy) {
-        result.sort((a, b) => {
+        result = result.sort((a, b) => {
             if (sortOrder === 'asc') {
                 return a[sortBy] > b[sortBy] ? 1 : -1;
             }
